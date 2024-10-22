@@ -1,0 +1,20 @@
+public class Nomina extends Cuenta implements Retiro, IDeposito {
+
+    public Nomina(int numeroCuenta, String titular) {
+        super(numeroCuenta, titular);
+    }
+
+    @Override
+    public void retiro(long valor) {
+        if (saldo >= valor) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+
+    @Override
+    public void deposito(long valor) {
+        saldo += valor;
+    }
+}
