@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        Nomina nomina = new Nomina(12345, "Julian");
+        nomina.deposito(2000);
+        nomina.retiro(600);
+        System.out.println(nomina);
+
+       
+        Ahorro ahorro = new Ahorro(67670, "Bryan");
+        ahorro.deposito(7000);
+        ahorro.retiro(9500);
+        System.out.println(ahorro);
+
+     
+        Corriente corriente = new Corriente(11111, "Mario", 300);
+        corriente.deposito(4000);
+        corriente.retiro(6300); // Utiliza sobregiro
+        System.out.println(corriente);
+
+    
+        Vivienda vivienda = new Vivienda(2266, "Mateo");
+        vivienda.deposito(3800);
+        System.out.println(vivienda);
+    }
+}
