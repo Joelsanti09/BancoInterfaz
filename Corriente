@@ -1,0 +1,22 @@
+public class Corriente extends Cuenta implements Retiro, IDeposito {
+    private long sobregiro;
+
+    public Corriente(int numeroCuenta, String titular, long sobregiro) {
+        super(numeroCuenta, titular);
+        this.sobregiro = sobregiro;
+    }
+
+    @Override
+    public void retiro(long valor) {
+        if (saldo + sobregiro >= valor) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente, incluso con sobregiro.");
+        }
+    }
+
+    @Override
+    public void deposito(long valor) {
+        saldo += valor;
+    }
+}
