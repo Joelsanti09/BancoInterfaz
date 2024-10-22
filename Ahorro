@@ -1,0 +1,22 @@
+public class Ahorro extends Cuenta implements Retiro, IDeposito {
+    private long interes;
+
+    public Ahorro(int numeroCuenta, String titular) {
+        super(numeroCuenta, titular);
+        this.interes = 0; // Inicializamos interés en 0
+    }
+
+    @Override
+    public void retiro(long valor) {
+        if (saldo >= valor) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+
+    @Override
+    public void deposito(long valor) {
+        saldo += valor;
+    }
+}
